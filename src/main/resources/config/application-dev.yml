@@ -41,10 +41,14 @@ faf-api:
         modName: fafdevelop
         modFilesExtension: nx5
         replaceExisting: true
+  registration:
+    activation-url-format: ${ACTIVATION_URL_FORMAT:http://localhost:8010/users/activate/%s}
+  password-reset:
+    reset-password-url-format: ${PASSWORD_RESET_URL_FORMAT:http://localhost:8010/users/claimPasswordResetToken/%s}
 
 spring:
   datasource:
-    url: jdbc:mysql://${DATABASE_ADDRESS:localhost}/${DATABASE_NAME:faf}?useSSL=false
+    url: jdbc:mysql://${DATABASE_ADDRESS:192.168.99.100}/${DATABASE_NAME:faf}?useSSL=false
     name: faf
     username: ${DATABASE_USERNAME:faf-api}
     password: ${DATABASE_PASSWORD:banana}
